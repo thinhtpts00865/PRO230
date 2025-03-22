@@ -94,7 +94,7 @@ public void loadDataToTable() {
         card4 = new com.tvt.component.Card();
         jLabel1 = new javax.swing.JLabel();
         panelBorder2 = new com.tvt.swing.PanelBorder();
-        calendarPanel2 = new com.tvt.swing.CalendarPanel();
+        calendarPanel2 = new com.tvt.component.CalendarPanel();
 
         panelBorder9.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -503,7 +503,7 @@ public void loadDataToTable() {
     private com.tvt.swing.ButtonMenu buttonMenu6;
     private com.tvt.swing.ButtonMenu buttonMenu7;
     private com.tvt.swing.ButtonMenu buttonMenu8;
-    private com.tvt.swing.CalendarPanel calendarPanel2;
+    private com.tvt.component.CalendarPanel calendarPanel2;
     private com.tvt.component.Card card1;
     private com.tvt.component.Card card4;
     private javax.swing.JLabel jLabel1;

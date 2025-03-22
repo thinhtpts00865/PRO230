@@ -608,7 +608,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="com.tvt.swing.CalendarPanel" name="calendarPanel2">
+        <Component class="com.tvt.component.CalendarPanel" name="calendarPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

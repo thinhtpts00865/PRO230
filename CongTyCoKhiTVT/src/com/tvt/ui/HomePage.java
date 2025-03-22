@@ -34,6 +34,7 @@ public class HomePage extends javax.swing.JFrame {
         };
         menu1.initMenu(event);
         showForm(new TrangChu());
+        init();
     }
     
     private void showForm(Component com){
@@ -104,4 +105,8 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private com.tvt.component.Menu menu1;
     // End of variables declaration//GEN-END:variables
+    private void init() {
+            new SplashScreen(this, true).setVisible(true);
+            new LoginForm(this, true).setVisible(true);
+    }
 }

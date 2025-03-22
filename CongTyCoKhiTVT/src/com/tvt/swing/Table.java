@@ -101,6 +101,6 @@ public class Table extends JTable{
         scroll.setVerticalScrollBar(sb); 
         JPanel p = new JPanel();
         p.setBackground(new Color(250, 250, 250));
-        scroll.setCorner(JScrollPane.UPPER_RIGHT_CORNER, p);
+        scroll.setCorner(JScrollPane.UPPER_LEADING_CORNER, p);
     }
 }
