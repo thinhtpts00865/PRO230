@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 public class XJdbc {
     private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl="jdbc:sqlserver://localhost;database=EduSys;encrypt=true;trustServerCertificate=true;";
+    private static String dburl="jdbc:sqlserver://localhost;database=CongTyCoKhiTVT;encrypt=true;trustServerCertificate=true;";
     private static String username="Admin_user";
     private static String password="123";
    

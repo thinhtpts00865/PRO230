@@ -8,10 +8,10 @@ package com.tvt.entity;
  *
  * @author ASUS
  */
-public class NhanVien_Example {
+public class TaiKhoan {
     private String maNV;
     private String matKhau;
-    private String hoten;
+    private String username;
     private boolean vaiTro = false;
 
     public String getMaNV() {
@@ -30,12 +30,12 @@ public class NhanVien_Example {
         this.matKhau = matKhau;
     }
 
-    public String getHoten() {
-        return hoten;
+    public String getUsername() {
+        return username;
     }
 
-    public void setHoten(String hoten) {
-        this.hoten = hoten;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public boolean isVaiTro() {

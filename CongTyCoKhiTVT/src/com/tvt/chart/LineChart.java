@@ -43,6 +43,7 @@ public class LineChart extends javax.swing.JPanel {
                 animate = fraction;
                 repaint();
             }
+            
         };
         animator = new Animator(800, target);
         animator.setResolution(0);

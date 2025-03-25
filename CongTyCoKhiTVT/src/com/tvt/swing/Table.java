@@ -29,7 +29,7 @@ public class Table extends JTable{
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
                 TableHeader h = new TableHeader(value + "");
-                if(column == 0 || column == 1){
+                if(column == 0 || column == 0){
                     h.setHorizontalAlignment(JLabel.CENTER);
                 }
                 return h;
