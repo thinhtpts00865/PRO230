@@ -153,6 +153,7 @@ INSERT INTO SanPham (maSP, maKho, maNV, tenSP, moTa, gia, soLuongKho, tenNV, loa
 ('SP019', 'K001', 'NV009', N'Ổ bi tự lựa', N'Ổ bi chống mài mòn', 13000, 70, N'Le Thi I', N'Linh kiện cơ khí', 'obitulua.jpg'),
 ('SP020', 'K003', 'NV010', N'Hộp số tự động', N'Hộp số dùng cho động cơ cơ khí', 1500000, 5, N'Nguyen Van J', N'Linh kiện cơ khí', 'hopsotudong.jpg');
 
+GO
 delete from DonHang
 
 -- Thêm 20 đơn hàng với ngày tháng trải đều trong 12 tháng
@@ -203,6 +204,25 @@ INSERT INTO ChiTietDonHang (maCDH, maDH, maSP, tenSP, soLuong, gia) VALUES
 ('CDH018', 'DH018', 'SP018', N'Thanh giằng', 4, 48000),
 ('CDH019', 'DH019', 'SP019', N'Ổ bi tự lựa', 10, 13000),
 ('CDH020', 'DH020', 'SP020', N'Hộp số tự động', 1, 1500000);
+
+--Thống kê doanh thu của năm theo từng tháng
+GO
+CREATE FUNCTION fn_ThongKeDoanhThuTheoNam (@Nam INT)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT 
+        MONTH(DH.ngayDat) AS Thang,
+        SUM(DH.tongTien) AS TongDoanhThu
+    FROM DonHang DH
+    JOIN ChiTietDonHang CTDH ON DH.maDH = CTDH.maDH
+    WHERE YEAR(DH.ngayDat) = @Nam
+    GROUP BY MONTH(DH.ngayDat)
+);
+-- SELECT * FROM fn_ThongKeDoanhThuTheoNam(2024);
+
+--Top 10 sản phẩm bán chạy
 GO
 CREATE PROCEDURE Top10SanPhamBanChay
 AS
@@ -217,6 +237,7 @@ BEGIN
     ORDER BY tongSoLuongBan DESC;
 END;
 
+--Trạng thái đơn hàng
 GO
 CREATE PROCEDURE DonHangTrangThai
 AS
@@ -232,7 +253,21 @@ BEGIN
 END;
 EXEC DonHangTrangThai;
 
+-- Thống kê tổng thông tin của năm
+GO
+CREATE PROCEDURE ThongKeThongTinNam
+    @Nam INT
+AS
+BEGIN
+    SET NOCOUNT ON;
 
-
-
-
+    SELECT 
+        @Nam AS Nam,
+        COUNT(DISTINCT dh.maDH) AS TongDonHang,
+        SUM(ctdh.soLuong) AS TongSoLuongHang,
+        SUM(ctdh.soLuong * ctdh.gia) AS TongDoanhThu
+    FROM DonHang dh
+    JOIN ChiTietDonHang ctdh ON dh.maDH = ctdh.maDH
+    WHERE YEAR(dh.ngayDat) = @Nam;
+END;
+EXEC ThongKeThongTinNam 2025;
