@@ -203,8 +203,8 @@ INSERT INTO ChiTietDonHang (maCDH, maDH, maSP, tenSP, soLuong, gia) VALUES
 ('CDH018', 'DH018', 'SP018', N'Thanh giằng', 4, 48000),
 ('CDH019', 'DH019', 'SP019', N'Ổ bi tự lựa', 10, 13000),
 ('CDH020', 'DH020', 'SP020', N'Hộp số tự động', 1, 1500000);
-
-ALTER PROCEDURE Top10SanPhamBanChay
+GO
+CREATE PROCEDURE Top10SanPhamBanChay
 AS
 BEGIN
     SELECT TOP 10 
@@ -217,6 +217,7 @@ BEGIN
     ORDER BY tongSoLuongBan DESC;
 END;
 
+GO
 CREATE PROCEDURE DonHangTrangThai
 AS
 BEGIN
