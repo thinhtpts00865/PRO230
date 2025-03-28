@@ -1,9 +1,7 @@
--- First Commit
+## Dự án Công Ty Cơ Khí TVT
 
--- Nghia commit
+# Change log:
+    TruNghia0907 | Commits on Mar 22, 2025 | Login, SplashScreen 
+    TruNghia0907 | Commits on Mar 25, 2025 | HomePage connect Database
 
--- Phu commit
-
--- TranT note: bỏ thói md 
-
--- CH tung quy xuong lem day
+    thinhtpts00865 | Commits on Mar 26, 2025 | Update Netbeans Library

@@ -4,8 +4,8 @@
  */
 package com.tvt.ui;
 
-import com.tvt.dao.NhanVienDAO;
-import com.tvt.entity.NhanVien_Example;
+import com.tvt.dao.TaiKhoanDAO;
+import com.tvt.entity.TaiKhoan;
 import com.tvt.utils.Auth;
 import com.tvt.utils.MsgBox;
 
@@ -213,22 +213,22 @@ public class LoginForm extends javax.swing.JDialog {
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
-    NhanVienDAO nhanVienDAO = new NhanVienDAO();
+    TaiKhoanDAO taikhoanDAO = new TaiKhoanDAO();
    
     private void dangNhap() {
       String maNV = txtUserName.getText();
       String matKhau = new String(txtPass.getPassword());
-      NhanVien_Example nhanVien = nhanVienDAO.selectById(maNV);
+      TaiKhoan tk = taikhoanDAO.selectById(maNV);
       if(matKhau.equals("") || maNV.equals("")){
             MsgBox.alert(this, "Điền đầy đủ thông tin!");
-        }else if(nhanVien == null){
+        }else if(tk == null){
             MsgBox.alert(this, "Sai tên đăng nhập!");
         }
-        else if(!matKhau.equals(nhanVien.getMatKhau())){
+        else if(!matKhau.equals(tk.getMatKhau())){
             MsgBox.alert(this, "Sai mật khẩu!");
         }
         else{
-            Auth.user = nhanVien;
+            Auth.user = tk;
             this.dispose();
         }
     }

@@ -4,7 +4,7 @@
  */
 package com.tvt.utils;
 
-import com.tvt.entity.NhanVien_Example;
+import com.tvt.entity.TaiKhoan;
 
 /**
  *
@@ -14,7 +14,7 @@ public class Auth {
     /**
      * Đối tượng này chứa thông tin người sử dụng sau khi đăng nhập
      */
-    public static NhanVien_Example user = null;
+    public static TaiKhoan user = null;
     /**
      * Xóa thông tin của người sử dụng khi có yêu cầu đăng xuất
      */
